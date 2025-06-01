@@ -44,7 +44,8 @@
     <div class="container mx-auto p-4 md:p-8 max-w-4xl">
 
         <header class="flex justify-between items-center mb-10">
-            <img src="blason plabennec.png" alt="Blason Rugby Club Plabennec" class="mx-auto mb-4 w-32 md:w-40">
+            <img src="blason plabennec.png" alt="Blason Rugby Club Plabennec" class="w-24 h-24 md:w-32 md:h-32">
+
             <div class="text-right">
                 <h1 class="text-3xl md:text-4xl font-bold text-rose-900 leading-tight">
                     <span class="text-yellow-500">Rugby</span>
@@ -60,7 +61,7 @@
             <div class="space-y-4 text-stone-700">
                 <p>Bonjour à toutes et à tous,</p>
                 <p>Une nouvelle saison passionnante s'apprête à démarrer, et comme chaque année, <strong class="font-semibold">nous avons besoin de vous !</strong> Au cœur de notre club, ce sont nos licenciés qui font notre force, de l'école de rugby jusqu'aux seniors, en passant par le pôle jeunes.</p>
-                <p>Après une année sportive riche en émotions, nous abordons cette saison avec de grandes ambitions. Nous sommes fiers d'annoncer la création d'une <strong class="font-semibold">"Académie"</strong> dédiée aux joueurs de M14 aux Juniors les plus motivés, un <strong class="font-semibold">renforcement de la formation continue de nos éducateurs</strong>, et bien d'autres projets passionnants !</p>
+                <p>Après une année sportive riche en émotions, nous abordons cette saison avec de grandes ambitions. Nous sommes fiers d'annonce la création d'une <strong class="font-semibold">"Académie"</strong> dédiée aux joueurs de M14 aux Juniors les plus motivés, un <strong class="font-semibold">renforcement de la formation continue de nos éducateurs</strong>, et bien d'autres projets passionnants !</p>
             </div>
         </section>
 
@@ -79,8 +80,9 @@
                             <tr>
                                 <th class="p-2 border border-stone-300">Catégorie</th>
                                 <th class="p-2 border border-stone-300 text-right">Prix Licence</th>
+                                <th class="p-2 border border-stone-300 text-right">Prix Coûtant</th>
                                 <th class="p-2 border border-stone-300 text-right">Prix Donateur</th>
-                                <th class="p-2 border border-stone-300 text-right">Coût Réel Donateur</th>
+                                <th class="p-2 border border-stone-300 text-right">Prix Réel Donateur</th>
                             </tr>
                         </thead>
                         <tbody id="pricing-table-body" class="text-sm">
@@ -172,18 +174,18 @@
 
     <script>
         const pricingData = [
-            { category: 'Baby', licence: 100, coutant: 50, donateur: 250, revient: 101 },
-            { category: 'M6', licence: 125, coutant: 50, donateur: 250, revient: 110 },
-            { category: 'M8', licence: 170, coutant: 50, donateur: 400, revient: 152 },
-            { category: 'M10', licence: 170, coutant: 50, donateur: 400, revient: 170 },
-            { category: 'M12', licence: 170, coutant: 50, donateur: 400, revient: 170 },
-            { category: 'M14', licence: 170, coutant: 50, donateur: 400, revient: 170 },
-            { category: 'M16', licence: 210, coutant: 80, donateur: 450, revient: 208 },
-            { category: 'M19', licence: 210, coutant: 80, donateur: 450, revient: 208 },
-            { category: 'SENIOR', licence: 250, coutant: 130, donateur: 500, revient: 258 },
-            { category: 'LOISIR', licence: 130, coutant: 50, donateur: 300, revient: 130 },
-            { category: 'SENIOR/Dirigeant', licence: 110, coutant: 130, donateur: 200, revient: 138 },
-            { category: 'DIRIGEANT', licence: 35, coutant: 74, donateur: 130, revient: 76.4 }
+            { category: 'Baby', licence: 100, coutant: 50, donateur: 250, revient: 151 },
+            { category: 'M6', licence: 125, coutant: 50, donateur: 250, revient: 151 },
+            { category: 'M8', licence: 170, coutant: 50, donateur: 400, revient: 202 },
+            { category: 'M10', licence: 170, coutant: 50, donateur: 400, revient: 202 },
+            { category: 'M12', licence: 170, coutant: 50, donateur: 400, revient: 202 },
+            { category: 'M14', licence: 170, coutant: 50, donateur: 400, revient: 202 },
+            { category: 'M16', licence: 210, coutant: 80, donateur: 450, revient: 238.8 },
+            { category: 'M19', licence: 210, coutant: 80, donateur: 450, revient: 238.8 },
+            { category: 'SENIOR', licence: 250, coutant: 130, donateur: 500, revient: 288.8 },
+            { category: 'LOISIR', licence: 130, coutant: 50, donateur: 300, revient: 168 },
+            { category: 'SENIOR/Dirigeant', licence: 110, coutant: 130, donateur: 200, revient: 186.8 },
+            { category: 'DIRIGEANT', licence: 35, coutant: 74, donateur: 130, revient: 126.04 }
         ];
 
         const categorySelect = document.getElementById('category-select');
@@ -205,12 +207,14 @@
         }
 
         function populateTable() {
+            tableBody.innerHTML = ''; // Clear existing rows
             pricingData.forEach(item => {
                 const row = document.createElement('tr');
                 row.className = 'border-b border-stone-200 hover:bg-stone-50';
                 row.innerHTML = `
                     <td class="p-2 border border-stone-300 font-semibold">${item.category}</td>
                     <td class="p-2 border border-stone-300 text-right">${item.licence.toFixed(2)} €</td>
+                    <td class="p-2 border border-stone-300 text-right">${item.coutant.toFixed(2)} €</td>
                     <td class="p-2 border border-stone-300 text-right">${item.donateur.toFixed(2)} €</td>
                     <td class="p-2 border border-stone-300 text-right font-bold text-green-700">${item.revient.toFixed(2)} €</td>
                 `;
