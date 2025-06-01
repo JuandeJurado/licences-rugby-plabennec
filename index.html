@@ -63,38 +63,6 @@
             </div>
         </section>
 
-        <section id="calculator" class="bg-rose-50 p-6 rounded-lg shadow-md mb-8 no-print">
-            <h2 class="text-2xl font-bold text-rose-900 mb-2 text-center">Explorez Votre Licence</h2>
-            <p class="text-center text-stone-600 mb-6">Sélectionnez une catégorie pour voir les options et l'avantage du don.</p>
-            
-            <div class="max-w-md mx-auto">
-                <label for="category-select" class="block text-sm font-medium text-stone-700 mb-1">Choisissez une catégorie :</label>
-                <select id="category-select" class="w-full p-2 border border-stone-300 rounded-md shadow-sm focus:ring-rose-500 focus:border-rose-500">
-                </select>
-            </div>
-
-            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <div id="pricing-options" class="space-y-4">
-                    <div>
-                        <h3 class="font-bold text-lg text-stone-700">Option 1 : Licence Standard</h3>
-                        <p id="standard-price" class="text-3xl font-bold text-stone-800"></p>
-                    </div>
-                    <div class="border-t pt-4">
-                        <h3 class="font-bold text-lg text-rose-900">Option 2 : Licence Donateur</h3>
-                        <p id="donor-price" class="text-3xl font-bold text-rose-900"></p>
-                        <p class="text-sm text-stone-600">Après déduction fiscale de 66%, votre coût réel est de :</p>
-                        <p id="net-cost" class="text-2xl font-semibold text-green-700"></p>
-                    </div>
-                </div>
-                <div>
-                    <div class="chart-container">
-                        <canvas id="pricingChart"></canvas>
-                    </div>
-                    <p id="chart-explainer" class="text-xs text-center text-stone-500 mt-2"></p>
-                </div>
-            </div>
-        </section>
-
         <section id="details" class="print-break-before">
              <div class="bg-white p-6 rounded-lg shadow-md mb-8">
                 <h2 class="text-2xl font-bold text-rose-900 mb-4">Soutenez Votre Club : Devenez Donateur !</h2>
@@ -120,6 +88,37 @@
                 </div>
             </div>
 
+            <section id="calculator" class="bg-rose-50 p-6 rounded-lg shadow-md mb-8 no-print">
+                <h2 class="text-2xl font-bold text-rose-900 mb-2 text-center">Explorez Votre Licence</h2>
+                <p class="text-center text-stone-600 mb-6">Sélectionnez une catégorie pour voir les options et l'avantage du don.</p>
+                
+                <div class="max-w-md mx-auto">
+                    <label for="category-select" class="block text-sm font-medium text-stone-700 mb-1">Choisissez une catégorie :</label>
+                    <select id="category-select" class="w-full p-2 border border-stone-300 rounded-md shadow-sm focus:ring-rose-500 focus:border-rose-500">
+                    </select>
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div id="pricing-options" class="space-y-4">
+                        <div>
+                            <h3 class="font-bold text-lg text-stone-700">Option 1 : Licence Standard</h3>
+                            <p id="standard-price" class="text-3xl font-bold text-stone-800"></p>
+                        </div>
+                        <div class="border-t pt-4">
+                            <h3 class="font-bold text-lg text-rose-900">Option 2 : Licence Donateur</h3>
+                            <p id="donor-price" class="text-3xl font-bold text-rose-900"></p>
+                            <p class="text-sm text-stone-600">Après déduction fiscale de 66%, votre coût réel est de :</p>
+                            <p id="net-cost" class="text-2xl font-semibold text-green-700"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="pricingChart"></canvas>
+                        </div>
+                        <p id="chart-explainer" class="text-xs text-center text-stone-500 mt-2"></p>
+                    </div>
+                </div>
+            </section>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-bold text-rose-900 mb-4">Votre Licence Inclut :</h3>
